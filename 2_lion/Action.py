@@ -3,7 +3,7 @@ __author__ = 'jk'
 
 
 # Базовый класс
-class Action:
+class Action(object):
     def __init__(self, name):
         self.name = name
 
@@ -14,8 +14,8 @@ class Action:
 
 # Съесть
 class EatA(Action):
-    def __int__(self):
-        super(self).__init__('Eat')
+    def __init__(self):
+        super(EatA, self).__init__('Eat')
 
     def execute(self):
         print 'Action: ' + self.name
@@ -23,8 +23,8 @@ class EatA(Action):
 
 # Спать
 class SleepA(Action):
-    def __int__(self):
-        super(self).__init__('Sleep')
+    def __init__(self):
+        super(SleepA, self).__init__('Sleep')
 
     def execute(self):
         print 'Action: ' + self.name
@@ -32,8 +32,8 @@ class SleepA(Action):
 
 # Бежать
 class RunA(Action):
-    def __int__(self):
-        super(self).__init__('Run')
+    def __init__(self):
+        super(RunA, self).__init__('Run')
 
     def execute(self):
         print 'Action: ' + self.name
@@ -41,8 +41,8 @@ class RunA(Action):
 
 # Посмотреть
 class LookA(Action):
-    def __int__(self):
-        super(self).__init__('Look')
+    def __init__(self):
+        super(LookA, self).__init__('Look')
 
     def execute(self):
         print 'Action: ' + self.name

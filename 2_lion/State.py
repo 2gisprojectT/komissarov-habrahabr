@@ -3,7 +3,7 @@ __author__ = 'jk'
 
 
 # Базовый класс сотояния
-class State:
+class State(object):
     def __init__(self, name):
         self.name = name
 
@@ -13,14 +13,14 @@ class State:
 
 # Голодный
 class HungryS(State):
-    def __int__(self):
-        super(self).__init__('Hungry')
+    def __init__(self):
+        super(HungryS, self).__init__('Hungry')
 
 
 # Сытый
 class FullS(State):
-    def __int__(self):
-        super(self).__init__('Full')
+    def __init__(self):
+        super(FullS, self).__init__('Full')
 
 
 # Статические поля
