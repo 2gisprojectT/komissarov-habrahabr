@@ -10,6 +10,7 @@ class Lion:
     def __init__(self, state):
         if not isinstance(state, s.State):
             raise ValueError('Wrong state')
+        self.action = None
         self.state = state
         # Таблица состояний и действий
         self.automate = {
@@ -30,4 +31,5 @@ class Lion:
         if state is not None:
             self.state = state
         if action is not None:
-            action.execute()
+            self.action = action
+            self.action.execute()
