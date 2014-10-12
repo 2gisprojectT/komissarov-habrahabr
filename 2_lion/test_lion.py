@@ -8,6 +8,7 @@ import unittest
 
 
 class MyTestCase(unittest.TestCase):
+    # Создание льва
     def test_lion_creation(self):
         try:
             lion = l.Lion(s.hungry)
@@ -20,6 +21,10 @@ class MyTestCase(unittest.TestCase):
         except ValueError:
             self.fail("Exception during lion creation")
 
+    # Создание льва с ошибочными параметрами
+    def test_lion_wrong_creation(self):
+        self.assertRaises(ValueError, l.Lion, None)
+        self.assertRaises(ValueError, l.Lion, object)
 
 if __name__ == '__main__':
     unittest.main()
