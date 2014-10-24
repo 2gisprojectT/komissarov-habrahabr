@@ -4,6 +4,7 @@ class Page():
         self.driver = driver
         self._search_bar = None
         self._search_result = None
+        self._error_search_result = None
         self._way_result = None
         self._share_panel = None
 
@@ -24,6 +25,16 @@ class Page():
             self._search_result = SearchResult(self.driver,
                                                self.driver.find_element_by_css_selector(SearchResult.selectors['self']))
         return self._search_result
+
+    @property
+    def error_search_result(self):
+        from online.helpers.error_search_resullt import ErrorSearchResult
+
+        if self._error_search_result is None:
+            self._error_search_result = ErrorSearchResult(self.driver,
+                                                          self.driver.find_element_by_css_selector(
+                                                              ErrorSearchResult.selectors['self']))
+        return self._error_search_result
 
     @property
     def way_result(self):

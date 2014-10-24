@@ -31,6 +31,9 @@ class SearchBar(BaseComponent):
         self.driver.find_element_by_css_selector(self.selectors['arrival_input']).send_keys(arrival)
         self.driver.find_element_by_css_selector(self.selectors['submit_way']).submit()
 
+    def clear_input(self):
+        self.driver.find_element_by_css_selector(self.selectors['input']).clear()
+
     @property
     def request(self):
         return self.driver.find_element_by_css_selector(self.selectors['input']).get_attribute('value')
